@@ -19,7 +19,9 @@ export default class TableExample extends React.Component<{}, {}> {
 		console.log(text)
 	}
 
-	handleRowClick = (user: User) => {
+	handleRowClick = (e: any, user: User) => {
+		// 阻止冒泡
+		// e.stopPropagation()
 		console.log('row click', user)
 	}
 
@@ -81,7 +83,7 @@ export default class TableExample extends React.Component<{}, {}> {
 		return (
 			<UserTable
 				onRow={(user: User) => ({
-					onClick: () => this.handleRowClick(user),
+					onClick: (e) => this.handleRowClick(e, user),
 				})}
 				dataSource={this.dataSource}
 				columns={this.columns}
