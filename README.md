@@ -1,2 +1,0 @@
-# PortalExample
-Created with CodeSandbox
